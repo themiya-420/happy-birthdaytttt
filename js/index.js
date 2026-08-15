@@ -20,14 +20,19 @@ function pageRender() {
     if (!typedStarted) {
         typedStarted = true
         new Typed("#typed", {
-            strings: ["hbd iced coffee", "Sending hickeys", "Hope you get shorter and hotter every day", "finally Luv youu", "hahah, just as a friend", "mmm… maybe more than a friend at last"],
-            typeSpeed: 42,
-            backSpeed: 20,
-            backDelay: 1600,
-            loop: true,
+            strings: ["hbd iced coffee"],
+            typeSpeed: 48,
             showCursor: true,
+            onComplete: revealBirthdayLines,
         })
     }
+}
+
+function revealBirthdayLines() {
+    const lines = document.querySelectorAll(".reveal-line")
+    lines.forEach((line, index) => {
+        setTimeout(() => line.classList.add("is-visible"), index * 1500)
+    })
 }
 
 function burstHearts(x, y, count) {
