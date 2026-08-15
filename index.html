@@ -12,7 +12,7 @@
     <div class="birth-cover-container" aria-label="Birthday welcome screen">
         <div class="cover-card">
             <p class="eyebrow">A tiny birthday café</p>
-            <img src="img/coffee-cat.png" alt="Blue robotic cat holding iced coffee" class="cover-cat">
+            <img src="img/doraemon-coffee.png" alt="Doraemon holding iced coffee" class="cover-cat">
             <h1>HBD, iced coffee</h1>
             <p>One sweet little surprise is ready for you.</p>
             <button id="birth-start-btn" disabled>Loading your surprise…</button>
@@ -41,24 +41,18 @@
                 <div class="doodle doodle-one">♥</div>
                 <div class="doodle doodle-two">♥</div>
                 <div class="cup-shadow"></div>
-                <div class="iced-cup" role="img" aria-label="Iced coffee cup with a heart label">
-                    <div class="straw"></div><div class="ice ice-one"></div><div class="ice ice-two"></div><div class="ice ice-three"></div>
-                    <div class="coffee"></div><div class="cup-label">iced<br><strong>coffee</strong></div>
-                </div>
-                <img src="img/coffee-cat.png" alt="Blue robotic cat celebrating with iced coffee" class="cat-art">
+                <img src="img/doraemon-coffee.png" alt="Doraemon holding an iced coffee" class="cat-art main-character">
             </div>
         </section>
-        <section class="note-card" aria-label="Birthday note">
-            <div class="note-pin">♥</div>
-            <p class="note-label">today&apos;s special</p>
-            <div class="reveal-lines" aria-live="polite">
-                <p class="note-text reveal-line">Sending hickeys</p>
-                <p class="note-text reveal-line">Hope you get shorter and hotter every day</p>
-                <p class="note-signoff reveal-line">finally… <b>Luv youu</b></p>
-                <p class="note-footer reveal-line">hahah — just as a friend</p>
-                <p class="note-footer reveal-line"><span>mmm… maybe more than a friend at last</span></p>
-            </div>
-        </section>
+        <div class="message-overlay" id="message-overlay" aria-hidden="true">
+            <div class="paper-plane" aria-hidden="true">✈</div>
+            <section class="message-popup" role="dialog" aria-modal="true" aria-labelledby="message-title">
+                <button class="popup-close" id="popup-close" type="button" aria-label="Close message">×</button>
+                <p class="note-label" id="message-title">a little birthday message</p>
+                <div class="typing-message" id="typing-message" aria-live="polite"></div>
+                <div class="popup-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            </section>
+        </div>
         <footer>served cold, with warm wishes <span>♥</span></footer>
     </main>
     <script src="js/lib/jquery.min.js"></script>
