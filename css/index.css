@@ -1,109 +1,30 @@
-body {
-    background-color: #FFDAB9;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;600;700;800;900&display=swap');
 
-img {
-    width: 100%;
-}
-
-.birth-cover-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background: url(../img/background.png) center no-repeat #000;
-}
-
-#birth-start-btn {
-    width: 50%;
-    height: 50px;
-    position: fixed;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    z-index: 9999999999999999999999;
-    font-size: 18px;
-    outline: none;
-    box-sizing: border-box;
-    border-radius: .3em;
-    text-transform: uppercase;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    border: 1px solid #a55d07;
-    color: rgb(120, 50, 5);
-    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    background-size: 100% 100%;
-    background: #fff linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07) no-repeat center;
-}
-
-#birth-start-btn:active {
-    background-size: 150% 150%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    border: 1px solid rgba(165, 93, 7, .6);
-    color: rgba(120, 50, 5, .8);
-}
-
-#brith-confetti {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.birth-people-name {
-    text-align: center;
-    font-size: 70px;
-    color: #C4515C;
-    letter-spacing: -7px;
-    font-weight: 700;
-    text-transform: uppercase;
-    animation: brith-sway-animation 2s ease-out infinite;
-    text-shadow: 0 0 5px #fff, 0 0 7px #fff;
-}
-
-.birth-greeting-word {
-    font-size: 25px;
-    color: #C4515C;
-}
-
-.birth-inline-people-name {
-    text-transform: capitalize;
-}
-
-.birth-cake {
-    transform: translate(-50%, -10%);
-    left: 50%;
-}
-
-.brith-balloon {
-    position: fixed;
-    top: 100%;
-    opacity: 0.5;
-    z-index: 99999999;
-}
-
-@keyframes brith-sway-animation {
-    0% {
-        transform: rotateZ(0);
-    }
-
-    25% {
-        transform: rotateZ(10deg);
-    }
-
-    50% {
-        transform: rotateZ(0deg);
-    }
-
-    75% {
-        transform: rotateZ(-10deg);
-    }
-}
+:root { --cream:#f7efe3; --ink:#263238; --coffee:#6d3f2b; --red:#e64b56; --blue:#59aee8; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--cream); color:var(--ink); font-family:'Nunito',sans-serif; overflow-x:hidden; }
+body:before { content:''; position:fixed; inset:0; pointer-events:none; opacity:.22; background-image:radial-gradient(#6d3f2b 0.7px,transparent .7px); background-size:18px 18px; }
+img { max-width:100%; }
+.birth-cover-container { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:24px; background:var(--cream); }
+.cover-card { width:min(440px,100%); text-align:center; padding:38px 28px 30px; border:2px solid var(--coffee); border-radius:28px; background:#fffaf2; box-shadow:10px 10px 0 var(--blue); }
+.cover-cat { width:160px; height:160px; object-fit:contain; margin:8px auto 4px; }
+.eyebrow,.note-label { color:var(--red); font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+.cover-card h1,.hero h1 { margin:8px 0; color:var(--coffee); font-size:clamp(38px,8vw,70px); line-height:.95; letter-spacing:-.06em; }
+.cover-card p:not(.eyebrow) { margin:12px 0 24px; color:#705d51; }
+#birth-start-btn,.heart-button { border:0; border-radius:999px; background:var(--red); color:#fffaf2; padding:14px 22px; font:700 14px 'Nunito',sans-serif; cursor:pointer; box-shadow:0 5px 0 #a93240; transition:transform .2s,box-shadow .2s; }
+#birth-start-btn:hover,.heart-button:hover { transform:translateY(-2px); box-shadow:0 7px 0 #a93240; }
+#birth-start-btn:disabled { cursor:wait; opacity:.75; }
+#brith-confetti { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:8; }
+.main { display:none; min-height:100vh; max-width:1080px; margin:auto; padding:24px 28px 32px; position:relative; z-index:1; }
+.topbar { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(109,63,43,.25); padding-bottom:18px; font-family:'DM Mono',monospace; font-size:12px; }
+.brand-mark { color:var(--coffee); } .brand-mark b { color:var(--red); } .date-pill { color:#7b6c62; }
+.hero { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; padding:64px 0 34px; }
+.hero-copy { max-width:490px; } .hero h1 span { color:var(--red); display:block; } .typed-shell { min-height:48px; margin:22px 0 14px; color:var(--blue); font-size:22px; font-weight:800; } .intro { color:#705d51; font-size:16px; line-height:1.6; max-width:390px; margin:0 0 24px; }
+.heart-button { background:var(--blue); box-shadow:0 5px 0 #327aa9; } .heart-button:hover { box-shadow:0 7px 0 #327aa9; } .heart-button span { color:var(--red); font-size:18px; margin-right:5px; }
+.cup-stage { min-height:410px; position:relative; display:grid; place-items:center; } .cat-art { position:absolute; z-index:3; width:180px; right:0; bottom:0; transform:rotate(5deg); } .cup-shadow { position:absolute; bottom:34px; width:240px; height:28px; border-radius:50%; background:rgba(109,63,43,.16); }
+.iced-cup { width:180px; height:245px; position:relative; z-index:2; overflow:hidden; border:4px solid var(--coffee); border-radius:18px 18px 38px 38px; background:#f0d2a1; box-shadow:9px 10px 0 rgba(89,61,47,.12); transform:rotate(-5deg); } .coffee { position:absolute; inset:30px 0 0; background:#a8663c; } .straw { position:absolute; z-index:3; width:15px; height:90px; background:var(--red); left:92px; top:-66px; transform:rotate(13deg); border:3px solid var(--coffee); } .ice { position:absolute; z-index:3; width:38px; height:25px; border-radius:7px; background:#bfe7f5; border:2px solid rgba(255,255,255,.8); transform:rotate(20deg); } .ice-one { top:45px; left:24px; }.ice-two { top:72px; right:25px; transform:rotate(-15deg); }.ice-three { top:98px; left:70px; } .cup-label { position:absolute; z-index:4; top:138px; left:25px; width:130px; padding:10px; border-radius:50%; text-align:center; color:var(--coffee); background:#fff4df; font-family:'DM Mono',monospace; font-size:12px; line-height:1.1; transform:rotate(5deg); } .cup-label strong { color:var(--red); font-size:18px; }
+.doodle { position:absolute; color:var(--red); font-size:54px; animation:float 3s ease-in-out infinite; } .doodle-one { left:14%; top:10%; }.doodle-two { right:17%; top:19%; color:var(--blue); animation-delay:1s; }
+.note-card { position:relative; width:min(680px,100%); margin:10px auto 26px; padding:28px 30px 24px; background:#fffaf2; border:2px solid var(--coffee); border-radius:18px; box-shadow:8px 8px 0 var(--red); text-align:center; transform:rotate(-1deg); } .reveal-line { opacity:0; transform:translateY(10px); transition:opacity .7s ease, transform .7s ease; } .reveal-line.is-visible { opacity:1; transform:translateY(0); } .reveal-lines { display:flex; flex-direction:column; gap:8px; min-height:205px; justify-content:center; } .note-pin { position:absolute; top:-18px; left:50%; color:var(--red); font-size:34px; transform:translateX(-50%); } .note-text { color:var(--coffee); font-size:22px; font-weight:800; line-height:1.25; margin:10px auto; max-width:550px; } .note-signoff { color:var(--blue); font-size:20px; } .note-footer { margin:22px 0 0; color:#806c5e; font-size:13px; line-height:1.7; } .note-footer span { color:var(--red); } footer { text-align:center; color:#806c5e; font:11px 'DM Mono',monospace; } footer span { color:var(--red); }
+.heart-pop { position:fixed; z-index:20; pointer-events:none; color:var(--red); font-size:28px; animation:pop 1.5s ease-out forwards; text-shadow:0 2px 0 #fff; } .heart-pop.blue { color:var(--blue); }
+@keyframes float { 50% { transform:translateY(-13px) rotate(8deg); } } @keyframes pop { 0% { opacity:0; transform:scale(.3) translateY(0) rotate(-12deg); } 18% { opacity:1; } 100% { opacity:0; transform:scale(1.2) translateY(-150px) rotate(20deg); } }
+@media (max-width:700px) { .main { padding:18px 18px 28px; } .topbar { font-size:10px; } .date-pill { display:none; } .hero { grid-template-columns:1fr; padding-top:42px; text-align:center; } .hero-copy { margin:auto; } .intro { margin-left:auto; margin-right:auto; } .cup-stage { min-height:330px; margin-top:-18px; } .cat-art { width:135px; right:3%; } .iced-cup { transform:scale(.85) rotate(-5deg); } .note-card { padding:26px 20px 20px; } .note-text { font-size:18px; } }
