@@ -1,81 +1,65 @@
-<html lang="zh-CN">
-
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
-
+    <meta name="theme-color" content="#f7efe3">
+    <title>HBD Iced Coffee</title>
     <link rel="stylesheet" href="css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-    <!-- 封面 -->
-    <div class="container">
-        <div class="row">
-            <div class="birth-cover-container">
-                <button id="birth-start-btn" disabled>加载中...</button>
-            </div>
+    <div class="birth-cover-container" aria-label="Birthday welcome screen">
+        <div class="cover-card">
+            <p class="eyebrow">A tiny birthday café</p>
+            <img src="img/coffee-cat.png" alt="Blue robotic cat holding iced coffee" class="cover-cat">
+            <h1>HBD, iced coffee</h1>
+            <p>One sweet little surprise is ready for you.</p>
+            <button id="birth-start-btn" disabled>Loading your surprise…</button>
         </div>
     </div>
 
-    <!-- 歌曲 -->
-    <audio class="song" controls loop style="display: none; opacity: 0">
-        <source src="music/index.mp3" />
+    <audio class="song" loop>
+        <source src="music/index.mp3" type="audio/mpeg">
     </audio>
-
-    <!-- 彩带 -->
     <canvas id="brith-confetti"></canvas>
 
-    <!-- 主内容 -->
-    <div class="main">
-        <div class="container pt-5">
-            <div class="row">
-                <!-- 横幅图 -->
-                <div class="col-12 col-xl-6 mx-auto">
-                    <img src="img/banner.png" alt="banner.png">
-                </div>
-
-                <!-- 寿星 -->
-                <div class="col-12  text-center">
-                    <div id="name" class="birth-people-name">Lily</div>
-                </div>
-
-                <!-- 祝词 -->
-                <div class="col-12 text-center">
-                    <div class="birth-greeting-word">
-                        <div id="greeting-word" class="typing">
-                            <h2><span>生日快乐呀，</span><i id="inline-name" class="birth-inline-people-name">莉莉</i><span id="people-type">小姐姐</span></h2>
-                            <h2>且喜且乐，且以永日</h2>
-                            <h2>一寸一礼，一寸欢喜</h2>
-                            <h2>遥叩芳辰，生辰吉乐</h2>
-                        </div>
-                        <span id="typed" style="white-space: pre;"></span>
-                    </div>
-                </div>
-
-                <!-- 蛋糕图 -->
-                <div class="col-12 col-xl-3 birth-cake">
-                    <img src="img/cake.gif" alt="cake.gif">
-                </div>
-
-                <!-- 版权 -->
-                <div class="col-12 text-center">
-                    <span class="birth-greeting-word" id="author">&copy;2024 Spring-_-Bear</span>
-                </div>
+    <main class="main">
+        <header class="topbar">
+            <span class="brand-mark">HBD <b>iced coffee</b></span>
+            <span class="date-pill">made with extra hearts</span>
+        </header>
+        <section class="hero" aria-labelledby="birthday-title">
+            <div class="hero-copy">
+                <p class="eyebrow">for the coolest cup in town</p>
+                <h1 id="birthday-title">HBD, <span>iced coffee</span></h1>
+                <div class="typed-shell" aria-live="polite"><span id="typed"></span></div>
+                <p class="intro">A little blue, a little red, and completely full of feelings. Tap the cup when you&apos;re ready.</p>
+                <button class="heart-button" id="heart-button" type="button"><span aria-hidden="true">♥</span> tap for a heart</button>
             </div>
-        </div>
-
-        <!-- 气球图 -->
-        <img src="img/balloon.png" alt="balloon" class="brith-balloon">
-    </div>
-
-    <script src="js/lib/snowflakes.min.js"></script>
+            <div class="cup-stage">
+                <div class="doodle doodle-one">♥</div>
+                <div class="doodle doodle-two">♥</div>
+                <div class="cup-shadow"></div>
+                <div class="iced-cup" role="img" aria-label="Iced coffee cup with a heart label">
+                    <div class="straw"></div><div class="ice ice-one"></div><div class="ice ice-two"></div><div class="ice ice-three"></div>
+                    <div class="coffee"></div><div class="cup-label">iced<br><strong>coffee</strong></div>
+                </div>
+                <img src="img/coffee-cat.png" alt="Blue robotic cat celebrating with iced coffee" class="cat-art">
+            </div>
+        </section>
+        <section class="note-card" aria-label="Birthday note">
+            <div class="note-pin">♥</div>
+            <p class="note-label">today&apos;s special</p>
+            <p class="note-text">Sending hickeys, Hope you get shorter and hotter every day</p>
+            <p class="note-signoff">finally… <b>Luv youu</b></p>
+            <p class="note-footer">hahah — just as a friend<br><span>mmm… maybe more than a friend at last</span></p>
+        </section>
+        <footer>served cold, with warm wishes <span>♥</span></footer>
+    </main>
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/typed.min.js"></script>
-    <script src="js/lib/dayjs.min.js"></script>
     <script src="js/confetti.js"></script>
     <script src="js/index.js"></script>
 </body>
-
 </html>
